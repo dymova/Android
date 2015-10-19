@@ -26,7 +26,7 @@
             android:id="@+id/text_type"
             android:text="@string/type"
             android:layout_below="@id/edit_task_name"
-            android:textSize="18sp"
+            android:textSize="20sp"
             />
 
         <Spinner
@@ -36,12 +36,14 @@
             android:entries="@array/types_of_task"
             android:layout_below="@id/edit_task_name"
             android:layout_toRightOf="@id/text_type"
+            android:textSize="20sp"
 
             >
 
         </Spinner>
 
         <EditText
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"

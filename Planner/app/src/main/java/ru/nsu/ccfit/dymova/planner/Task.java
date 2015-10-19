@@ -5,6 +5,8 @@ public class Task {
     private String type;
     private String description;
 
+    private long id = -1;
+
     public Task(String name, String type, String description) {
         this.name = name;
         this.type = type;
@@ -21,5 +23,13 @@ public class Task {
 
     public String getDescription() {
         return description;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
     }
 }

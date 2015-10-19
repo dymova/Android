@@ -50,6 +50,10 @@ public class PlannerDbHelper extends SQLiteOpenHelper{
         return getWritableDatabase().insert(TABLE_NAME, null, cv);
     }
 
+    public int deleteTask(long id) {
+        return getWritableDatabase().delete(TABLE_NAME, "_id=?", new String[] {String.valueOf(id)});
+    }
+
     public TaskCursor queryTasks() {
         Cursor wrapper = getReadableDatabase().query(TABLE_NAME,
                 null,
@@ -73,12 +77,15 @@ public class PlannerDbHelper extends SQLiteOpenHelper{
             if(isBeforeFirst() || isAfterLast()) {
                 return null;
             }
+            long id = getLong(getColumnIndex(PlanerDbContract.Tasks._ID));
             String name = getString(getColumnIndex(COLUMN_NAME_TASK_NAME));
             String type = getString(getColumnIndex(COLUMN_NAME_TASK_TYPE));
             String description = getString(getColumnIndex(COLUMN_NAME_TASK_DESCRIPTION));
             Log.d("task", name + type + description);
             moveToNext();
-            return new Task(name, type, description);
+            Task task = new Task(name, type, description);
+            task.setId(id);
+            return task;
         }
     }
 
