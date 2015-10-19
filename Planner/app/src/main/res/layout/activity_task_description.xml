@@ -51,7 +51,16 @@
             android:layout_below="@id/spinner_task_type"/>
 
 
-
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/flat_selector"
+            android:textColor="@android:color/white"
+            android:text="@string/save"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
 </LinearLayout>
